@@ -22,10 +22,11 @@ jobs:
     - name: Build the code
       run: |
         pwd
-        echo "hello" > $HOME/apa.txt
-        echo $HOME/apa.txt
-        # time ../v/v build config_http
+        # echo "hello" > $HOME/apa.txt
+        # echo $HOME/apa.txt
+        time ../v/v build config_http
     - name: Results
       run: |
         pwd
-        #./a.out
+        export HOME=$GITHUB_WORKSPACE
+        ./a.out

@@ -25,7 +25,17 @@ pub fn (u Config) str() string {
 }
 
 fn read_config() Config {
-	home_path := os.getenv('HOME')
+	mut home_path := ''
+
+	home_path = os.getenv('HOME')
+
+	/*
+	if os.getenv('GITHUB_WORKSPACE') == '' {
+		home_path = os.getenv('HOME')
+	} else {
+		home_path = os.getenv('GITHUB_WORKSPACE')
+	}
+	*/
 	
 	sfile := filepath.join(home_path,".config/martenh/test.json")
 	spath := filepath.basedir(sfile)
