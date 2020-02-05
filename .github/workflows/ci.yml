@@ -13,7 +13,6 @@ jobs:
       run: |
         sudo apt-get update
         echo $GITHUB_WORKSPACE
-        set
         pwd
     - name: Build V
       run: |
@@ -24,6 +23,7 @@ jobs:
       run: |
         pwd
         echo "hello" > $HOME/apa.txt
+        echo $HOME/apa.txt
         # time ../v/v build config_http
     - name: Results
       run: |
