@@ -12,6 +12,9 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
+        echo $GITHUB_WORKSPACE
+        set
+        pwd
     - name: Build V
       run: |
         git clone --depth 1 https://github.com/vlang/v ../v
@@ -19,7 +22,9 @@ jobs:
         make
     - name: Build the code
       run: |
-        time ../v/v build config_http
+        pwd
+        # time ../v/v build config_http
     - name: Results
       run: |
-        ./a.out
+        pwd
+        #./a.out
