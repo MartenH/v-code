@@ -23,6 +23,7 @@ jobs:
     - name: Build the code
       run: |
         pwd
+        echo "hello" > $HOME/apa.txt
         # time ../v/v build config_http
     - name: Results
       run: |
