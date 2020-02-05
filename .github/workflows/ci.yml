@@ -9,9 +9,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+    - name: Install dependencies
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        sudo apt-get update
+    - name: Build V
+      run: |
+        git clone --depth 1 https://github.com/vlang/v ../v
+        cd ../v
+        make
+    - name: Build the code
+      run: |
+        time ../v/v http_config
+    - name: Results
+      run: |
+        ls a.out
