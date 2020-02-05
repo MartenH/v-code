@@ -38,10 +38,12 @@ fn read_config() Config {
 			println("$spath does not exist, creating it")
 
 			os.mkdir(spath) or {
+				println("os.mkdir() failed on $spath")
 				panic(err)
 			}
 		}			
 
+		println("Creating $sfile")
 		s := Config {user: "user@example.com", password : "123", url: "https://example.com" }
 
 		mut file := os.open_file(sfile, "w+", 0666) or { panic(err) }
