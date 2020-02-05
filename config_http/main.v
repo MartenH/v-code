@@ -27,15 +27,18 @@ pub fn (u Config) str() string {
 fn read_config() Config {
 	mut home_path := ''
 
+	home_path = os.getenv('HOME')
 
 	/* GitHub workaround */
+	/*
 	if os.getenv('GITHUB_WORKSPACE') == '' {
 		home_path = os.getenv('HOME')
 	} else {
 		home_path = os.getenv('GITHUB_WORKSPACE')
 	}
+	*/
 	
-	sfile := filepath.join(home_path,".config/martenh/test.json")
+	sfile := filepath.join(home_path,".config/martenh/bepa/test.json")
 	spath := filepath.basedir(sfile)
 
 	/* Check if there is a config file */
@@ -45,10 +48,7 @@ fn read_config() Config {
 		if !os.exists(spath) {
 			println("$spath does not exist, creating it")
 
-			os.mkdir(spath) or {
-				println("os.mkdir() failed on $spath")
-				panic(err)
-			}
+			os.mkdir_all(spath)
 		}			
 
 		println("Creating $sfile")
