@@ -19,7 +19,7 @@ jobs:
         make
     - name: Build the code
       run: |
-        time ../v/v http_config
+        time ../v/v build config_http
     - name: Results
       run: |
-        ls a.out
+        ./a.out
