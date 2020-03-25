@@ -1,0 +1,50 @@
+{
+  "SrcDir": "c:/msys64/mingw64/include/git2",
+  "DstDir": "./tmp",
+  "ModuleName": "libgit2",
+  "VWrapperFileName": "libgit2",
+  "CDeclarationFileName": null,
+  "SingleVFileExport": true,
+  "CopyHeadersToDstDir": false,
+  "ExcludeFunctionsThatContain": [],
+  "StripPrefixFromFunctionNames": [
+    "SDL_"
+  ],
+  "StripEnumItemCommonPrefix": true,
+  "BaseSourceFolder": "src",
+  "UseHeaderFolder": true,
+  "CTypeToVType": {
+    "__sFILE": "voidptr"
+  },
+  "Files": [
+    "types.h"
+  ],
+  "ExcludedFiles": [
+    "SDL_main",
+    "SDL_audio",
+    "SDL_assert",
+    "SDL_atomic",
+    "SDL_mutex",
+    "SDL_thread",
+    "SDL_gesture",
+    "SDL_sensor",
+    "SDL_power",
+    "SDL_render",
+    "SDL_shape",
+    "SDL_endian",
+    "SDL_cpuinfo",
+    "SDL_loadso",
+    "SDL_system"
+  ],
+  "ExcludedFromVWrapperFiles": [
+    "SDL_stdinc"
+  ],
+  "Defines": ["INCLUDE_git_types_h__"],
+  "IncludeFolders": [],
+  "SystemIncludeFolders": [],
+  "AdditionalArguments": [],
+  "AutoSquashTypedef": true,
+  "ParseAsCpp": true,
+  "ParseComments": false,
+  "TargetSystem": "darwin"
+}
